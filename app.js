@@ -82,13 +82,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/listings", routerListings);
-app.use("/listings/:id/reviews", routerReviews);
-app.use("/", routerUser);
-
 app.get("/", (req, res) => {
   res.redirect("/listings");
 });
+
+app.use("/listings", routerListings);
+app.use("/listings/:id/reviews", routerReviews);
+app.use("/", routerUser);
 
 app.all("/*splat", (req, res, next) => {
   next(new ExpressError(404, "Page not found!"));
