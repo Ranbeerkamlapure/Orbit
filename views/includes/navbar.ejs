@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand orbit-brand" href="/listings">
+      <img
+        src="https://img.icons8.com/external-others-bzzricon-studio/64/external-orbit-mother-earth-day-others-bzzricon-studio.png"
+        alt="Orbit Logo"
+      />
+      <span>Orbit</span>
+    </a>
+    <!-- Center: Search Bar -->
+    <div class="orbit-search-container">
+      <div class="orbit-search-bar">
+        <div class="search-section">
+          <label>Where</label>
+          <span>Search destinations</span>
+        </div>
+
+        <div class="search-section">
+          <label>Check in</label>
+          <span>Add dates</span>
+        </div>
+
+        <div class="search-section">
+          <label>Check out</label>
+          <span>Add dates</span>
+        </div>
+
+        <button type="button" class="search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link host-link" href="/listings/new"
+          ><img
+            src="https://img.icons8.com/plasticine/100/home.png"
+            alt="Home"
+            class="host-icon"
+          />Orbit your home</a
+        >
+        <%if(!currUser){ %>
+        <a class="nav-link active" aria-current="page" href="/signup"
+          ><b>Sign up</b></a
+        >
+        <a class="nav-link" href="/login"><b>Log in</b></a>
+        <%}%>
+        <% if(currUser) {%>
+        <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <%}%>
+      </div>
+    </div>
+  </div>
+</nav>
