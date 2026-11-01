@@ -86,6 +86,10 @@ app.use("/listings", routerListings);
 app.use("/listings/:id/reviews", routerReviews);
 app.use("/", routerUser);
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 app.all("/*splat", (req, res, next) => {
   next(new ExpressError(404, "Page not found!"));
 });
